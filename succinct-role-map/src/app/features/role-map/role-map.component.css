@@ -1,0 +1,91 @@
+.header {
+    position: fixed;
+    top: 5px;
+    left: 0;
+    width: 20%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for contrast */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+    box-shadow: rgba(255, 255, 255, 0.9);
+  }
+  .logo-link {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .left {
+    position: fixed;
+    top: 0; /* Moves it to the very top */
+    right: 0; /* Moves it to the very left */
+    width: 4%;
+    height: 60px;
+    background:rgba(255, 255, 255, 0.9);; /* Semi-transparent white */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 10;
+    box-shadow: rgba(255, 255, 255, 0.9);; /* Light shadow for better visibility */
+}
+
+.twitter-link:hover {
+    display: inline-block;
+    margin-top: 0; /* Removes the extra space */
+    transform: scale(1.1); /* Slight zoom on hover */
+    opacity: 0.8;
+}
+  .logo {
+    height: 100px; /* Adjust based on your logo's aspect ratio */
+    width: auto;
+  }
+  .map-wrapper {
+    position: relative;
+    width: 900px;
+    height: 650px;
+    background: linear-gradient(135deg, #ffe0f0, #ffccff);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    transition: all 0.5s ease;
+    margin-top: 60px; /* Offset for the fixed header */
+  }
+  
+  .role-paths {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .path-line {
+    stroke: #0078d4; /* Blue for locked paths */
+    stroke-width: 2;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, stroke 0.3s ease;
+  }
+  
+  .path-line.unlocked {
+    opacity: 0.7;
+    stroke: #00c853; /* Green for unlocked paths */
+    animation: drawPath 2s ease-in-out forwards; /* Draws the path */
+  }
+  
+  @keyframes drawPath {
+    from {
+      stroke-dashoffset: inherit;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .map-wrapper {
+      width: 100%;
+      height: 400px;
+    }
+  }

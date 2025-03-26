@@ -1,0 +1,13 @@
+<div
+  *ngIf="isUnlocked"
+  class="role-node"
+  [style.left.px]="role.x"
+  [style.top.px]="role.y"
+  [ngClass]="{'locked': !isUnlocked}"
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+  (click)="playSound()"
+>
+  <span [ngClass]="{'unreleased': role.unreleased}">{{ role.name }}</span>
+  <div class="tooltip" *ngIf="hover">{{ role.description }}</div>
+</div>
